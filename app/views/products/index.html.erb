@@ -14,6 +14,22 @@
     </div>
 <% end %>
 
+<div>
+    <h3>Search Results</h3>
+    <ul>
+        <% for row in @query.facet(:price).rows %>
+            <li>
+                <% if params[:price_range].blank? %>
+                    <%= link_to row.value, :price_range => row.value, :search => params[:search] %> (<%= row.count %>)
+                <% else %>
+                    <%= row.value %> (<%= link_to "X", :price_range => nil %>)
+                <% end %>
+            </li>
+        <% end %>
+    </ul>
+</div>
+
+
 <table>
   <thead>
     <tr>

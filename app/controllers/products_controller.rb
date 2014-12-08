@@ -3,10 +3,11 @@ class ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
-
+    # @products = Product.all
     @query = Product.search do
       fulltext params[:search]
+      facet :price, :range => 0..500, :range_interval => 100
+      with(:price, Range.new(*params[:price_range].split("..").map(&:to_i))) if params[:price_range].present?
     end
     @products = @query.results
   end
