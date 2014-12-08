@@ -24,11 +24,13 @@ gem "title"
 gem "uglifier"
 gem "unicorn"
 gem "paperclip", "~> 4.1.0"
+gem "sunspot_rails"
 
 group :development do
   gem "bundler-audit"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "sunspot_solr"
 end
 
 group :development, :test do
@@ -38,8 +40,8 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.0.0"
-  gem 'pry'
-  gem 'pry-nav'
+  gem "pry"
+  gem "pry-nav"
 end
 
 group :test do
