@@ -23,6 +23,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem "paperclip", "~> 4.1.0"
 
 group :development do
   gem "bundler-audit"
