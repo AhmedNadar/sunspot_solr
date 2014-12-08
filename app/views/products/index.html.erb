@@ -1,5 +1,19 @@
 <h1>Listing products</h1>
 
+
+<%= form_tag products_path, :method => :get do %>
+    <div>
+        <div>
+            <div>
+                <%= text_field_tag :search, params[:search] %>
+            </div>
+            <div>
+                <%= submit_tag "Search", :name => nil %>
+            </div>
+        </div>
+    </div>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -15,7 +29,9 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.price %></td>
+        <td><%#= product.price %>
+            <%= number_to_currency(product.price) %>
+        </td>
         <td><%= product.description %></td>
         <td><%= image_tag product.photo.url(:thumb) %></td>
         <td><%= link_to 'Show', product %></td>
