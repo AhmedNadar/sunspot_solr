@@ -15,9 +15,9 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  # GET /products/1/edit
-  def edit
-  end
+  # # GET /products/1/edit
+  # def edit
+  # end
 
   # POST /products
   def create
@@ -30,14 +30,14 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  def update
-    if @product.update(product_params)
-      redirect_to @product, notice: 'Product was successfully updated.'
-    else
-      render :edit
-    end
-  end
+  # # PATCH/PUT /products/1
+  # def update
+  #   if @product.update(product_params)
+  #     redirect_to @product, notice: 'Product was successfully updated.'
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   # DELETE /products/1
   def destroy
