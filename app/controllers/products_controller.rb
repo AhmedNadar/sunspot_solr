@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
   # GET /products
   def index
     @products = Product.all
+
+    @query = Product.search do
+      fulltext params[:search]
+    end
+    @products = @query.results
   end
 
   # GET /products/1

@@ -5,4 +5,10 @@ class Product < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
   validates :photo, presence: true
+
+  # enable a full-text search to be done on the name and description fields
+  searchable do
+    text :name, :description
+  end
+
 end
